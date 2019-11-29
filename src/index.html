@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--    Including Bulma CSS Framework   -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+    <title>Learn VUE</title>
+    <style>
+        body {
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="root" class="container">
+
+    <!--     inline means everything between the tagsa should be considered as the template     -->
+    <progress-view inline-template>
+        <div>
+            <h1>Your progress through this course is {{ completionRate }}%</h1>
+            <p><button @click="completionRate += 10">Update completion rate</button></p>
+        </div>
+    </progress-view>
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

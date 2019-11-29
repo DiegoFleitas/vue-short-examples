@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Learn VUE</title>
+    <style>
+        .color-red { color: red }
+        .is-loading {
+            background-color: blue
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+
+<!--        Data binding  +  Event Listener +  List rendering -->
+        <input type="text" id="input" v-model="newName">
+<!--        <button v-on:click="addName">Add name</button>-->
+        <button @click="addName">Add name</button>
+        <ul>
+            <li v-for="name in names" v-text="name"></li>
+        </ul>
+    </div>
+
+    <script>
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                newName: '',
+                names: ['Joe', 'Mary', 'Jane'],
+            },
+
+            methods: {
+                addName() {
+                    this.names.push(this.newName);
+                    this.newName = '';
+
+                    // NEVER USE THIS
+                    // document.querySelector('#button').addEventListener('click', () => {
+                    //     let name = document.querySelector('#input');
+                    //
+                    //     app.names.push(name.value);
+                    //
+                    //     name.value = '';
+                    // });
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>
